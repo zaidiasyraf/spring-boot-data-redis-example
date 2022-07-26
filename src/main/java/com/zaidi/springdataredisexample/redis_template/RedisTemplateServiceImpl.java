@@ -2,7 +2,6 @@ package com.zaidi.springdataredisexample.redis_template;
 
 import java.util.List;
 import java.util.Map;
-import org.springframework.data.redis.core.RedisKeyValueTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +33,5 @@ public class RedisTemplateServiceImpl implements RedisTemplateService {
     public void createOrUpdateHash(final String key, final Map<String, String> hash) {
         stringRedisTemplate.opsForHash().putAll(key, hash);
     }
-
-
 
 }

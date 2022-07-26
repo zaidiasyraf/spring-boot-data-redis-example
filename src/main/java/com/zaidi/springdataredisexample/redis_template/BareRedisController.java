@@ -33,4 +33,17 @@ public class BareRedisController {
         redisTemplateService.createOrUpdateList(listRedisDto.getKey(), listRedisDto.getValues());
     }
 
+    @PostMapping("/set")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public void createSet(@RequestBody ListRedisDto listRedisDto) {
+        redisTemplateService.createOrUpdateSet(listRedisDto.getKey(), listRedisDto.getValues().toArray(new String[0]));
+    }
+
+    @PostMapping("/hash")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public void createHash(@RequestBody HashRedisDto hashRedisDto) {
+        redisTemplateService.createOrUpdateHash(hashRedisDto.getKey(), hashRedisDto.getValues());
+    }
+
+
 }
